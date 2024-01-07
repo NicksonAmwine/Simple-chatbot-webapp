@@ -1,0 +1,905 @@
+Watching for file changes with StatReloader
+Received audio data: blob, size: 0 bytes
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+D:\data\My docs\security\chatbot\mychatbot\mychatbot\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /transcribe
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\utils\deprecation.py", line 135, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\middleware\common.py", line 88, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/transcribe/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Received audio data: blob, size: 47411 bytes
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: blob, size: 66823 bytes
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: blob, size: 58074 bytes
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: blob, size: 66827 bytes, type
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: blob, size: 63912 bytes, type
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: audio.webm, size: 56268 bytes, type
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 68769 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: audio.webm, size: 55175 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Not Found: /favicon.ico
+Received audio data: audio.wav, size: 1015852 bytes, type: audio/wav
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: audio.wav, size: 950316 bytes, type: audio/wav
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Watching for file changes with StatReloader
+Received audio data: audio.wav, size: 79799 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.wav, size: 80429 bytes, type: audio/webm
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 143, in transcribe
+    audio_data = audio_file.stream.read()
+                 ^^^^^^^^^^^^^^^^^
+AttributeError: 'InMemoryUploadedFile' object has no attribute 'stream'
+Received audio data: audio.wav, size: 80696 bytes, type: audio/webm
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 143, in transcribe
+    audio_data = audio_file.stream.read()
+                 ^^^^^^^^^^^^^^^^^
+AttributeError: 'InMemoryUploadedFile' object has no attribute 'stream'
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.wav, size: 80353 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: audio.mp3, size: 466988 bytes, type: audio/wav
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: audio.mp3, size: 475180 bytes, type: audio/wav
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: audio.mp3, size: 79687 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+Received audio data: audio.webm, size: 79440 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 400 Bad Request"
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 99, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 1088, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 853, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_base_client.py", line 930, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unrecognized file format. Supported formats: ['flac', 'm4a', 'mp3', 'mp4', 'mpeg', 'mpga', 'oga', 'ogg', 'wav', 'webm']", 'type': 'invalid_request_error', 'param': None, 'code': None}}
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 79450 bytes, type: audio/webm
+Saved audio file to audio.webm
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 157, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 92, in create
+    files = extract_files(cast(Mapping[str, object], body), paths=[["file"]])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_utils\_utils.py", line 53, in extract_files
+    files.extend(_extract_items(query, path, index=0, flattened_key=None))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_utils\_utils.py", line 96, in _extract_items
+    return _extract_items(
+           ^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_utils\_utils.py", line 75, in _extract_items
+    assert_is_file_content(obj, key=flattened_key)
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_files.py", line 31, in assert_is_file_content
+    raise RuntimeError(
+RuntimeError: Expected entry at `file` to be bytes, an io.IOBase instance, PathLike or a tuple but received <class 'builtin_function_or_method'> instead. See https://github.com/openai/openai-python/tree/main#file-uploads
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 79420 bytes, type: audio/webm
+Saved audio file to D:\data\My docs\security\chatbot\mychatbot\media\audio_8IC2o26.webm
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 157, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 92, in create
+    files = extract_files(cast(Mapping[str, object], body), paths=[["file"]])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_utils\_utils.py", line 53, in extract_files
+    files.extend(_extract_items(query, path, index=0, flattened_key=None))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_utils\_utils.py", line 96, in _extract_items
+    return _extract_items(
+           ^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_utils\_utils.py", line 75, in _extract_items
+    assert_is_file_content(obj, key=flattened_key)
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_files.py", line 31, in assert_is_file_content
+    raise RuntimeError(
+RuntimeError: Expected entry at `file` to be bytes, an io.IOBase instance, PathLike or a tuple but received <class 'str'> instead. See https://github.com/openai/openai-python/tree/main#file-uploads
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 79424 bytes, type: audio/webm
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    path = default_storage.save('audio.webm', ContentFile(audio_file))
+                                              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\files\base.py", line 128, in __init__
+    super().__init__(stream_class(content), name=name)
+                     ^^^^^^^^^^^^^^^^^^^^^
+TypeError: a bytes-like object is required, not 'InMemoryUploadedFile'
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 79392 bytes, type: audio/webm
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 149, in transcribe
+    path = default_storage.save('myaudio.webm', ContentFile(audio_file))
+                                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\files\base.py", line 128, in __init__
+    super().__init__(stream_class(content), name=name)
+                     ^^^^^^^^^^^^^^^^^^^^^
+TypeError: a bytes-like object is required, not 'InMemoryUploadedFile'
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 79459 bytes, type: audio/webm
+Saved audio file to D:\data\My docs\security\chatbot\mychatbot\media\myaudio.webm
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 157, in transcribe
+    transcript = client.audio.transcriptions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\resources\audio\transcriptions.py", line 92, in create
+    files = extract_files(cast(Mapping[str, object], body), paths=[["file"]])
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_utils\_utils.py", line 53, in extract_files
+    files.extend(_extract_items(query, path, index=0, flattened_key=None))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_utils\_utils.py", line 96, in _extract_items
+    return _extract_items(
+           ^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_utils\_utils.py", line 75, in _extract_items
+    assert_is_file_content(obj, key=flattened_key)
+  File "D:\data\My docs\my_security\Lib\site-packages\openai\_files.py", line 31, in assert_is_file_content
+    raise RuntimeError(
+RuntimeError: Expected entry at `file` to be bytes, an io.IOBase instance, PathLike or a tuple but received <class 'str'> instead. See https://github.com/openai/openai-python/tree/main#file-uploads
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 79626 bytes, type: audio/webm
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 150, in transcribe
+    myfile = open("mychatbot\media\myaudio.webm", "rb")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'mychatbot\\media\\myaudio.webm'
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 79452 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: Hello, how are you?
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+Received audio data: audio.webm, size: 79715 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: Hello, how are you?
+
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 79392 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: Hi, my name is Nixon.
+
+Received audio data: audio.webm, size: 79420 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: Hey, I need some help.
+
+Received audio data: audio.webm, size: 54372 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: Hi, I need some help.
+
+Received audio data: audio.webm, size: 64042 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: See you next time.
+
+Received audio data: audio.webm, size: 51781 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+Received audio data: audio.webm, size: 79716 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: Hello, I need help.
+
+Received audio data: audio.webm, size: 59302 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: Hey, I'm so very dead today.
+
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 63128 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: Hey, I'm so very bored today.
+
+Internal Server Error: /transcribe/
+Traceback (most recent call last):
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\my_security\Lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py", line 161, in transcribe
+    os.remove(myfile_path)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\data\\My docs\\security\\chatbot\\mychatbot\\media\\myaudio.webm'
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Received audio data: audio.webm, size: 53434 bytes, type: audio/webm
+HTTP Request: POST https://api.openai.com/v1/audio/transcriptions "HTTP/1.1 200 OK"
+Received transcript: Hi, I need some help.
+
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+Not Found: /vendor/jquery/jquery.min.js
+Not Found: /vendor/bootstrap/js/bootstrap.bundle.min.js
+Not Found: /vendor/jquery-easing/jquery.easing.min.js
+Not Found: /js/sb-admin-2.min.js
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+D:\data\My docs\security\chatbot\mychatbot\mychatApp\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /vendor/jquery/jquery.min.js
+Not Found: /vendor/bootstrap/js/bootstrap.bundle.min.js
+Not Found: /vendor/jquery-easing/jquery.easing.min.js
+Not Found: /js/sb-admin-2.min.js
