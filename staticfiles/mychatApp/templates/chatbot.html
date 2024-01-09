@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'chatbot.css' %}">
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Chat Buddy</h1>
+        <h3 class="display-5">Welcome, {{user.first_name.title|default:'Guest'}}</h3>
+        <p class="lead">This is a simple chatbot that can help you with your queries.</p>
+
+        <hr class="my-4">
+        <div id="chatbot-container">
+            <div id="chatlog"></div>
+            <form id="chat-form">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="microphone-icon" style="cursor: pointer">🎙️</span>
+                      
+                    </div>
+                    <input type="text" class="form-control" id="user-input" aria-describedby="microphone-icon" placeholder="Type a message...">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Send</button>
+                    </div>
+                  </div>
+            </form>
+        </div>
+        <p class="lead">
+            {% if user.is_authenticated %}
+                <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button" >Logout</a>
+            {% else %}
+                <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Sign in</a>
+            {% endif %}
+        </p>
+    </div>
+    <script src="{% static 'chatbot.js' %}"></script>
+    <script src="https://cdn.WebRTC-Experiment.com/RecordRTC.js"></script>
+</body>
+</html>
+{% endblock %}
+```
