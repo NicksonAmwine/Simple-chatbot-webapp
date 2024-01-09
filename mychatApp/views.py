@@ -10,7 +10,7 @@ from .forms import RegisterForm, LoginForm
 from django.contrib.auth.decorators import login_required
 # from .models import Profile
 from .forms import UpdateUserForm, UpdateProfileForm
-import logging
+# import logging
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
 from django.conf import settings
@@ -137,7 +137,7 @@ def profile(request):
     return render(request, 'profile.html', {'user_form': user_form, 'profile_form': profile_form})
 
 
-logger = logging.getLogger(__name__)
+# logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def transcribe(request):
@@ -145,7 +145,7 @@ def transcribe(request):
         # Get the audio data from the request
         if 'audio_data' in request.FILES:
             audio_file = request.FILES['audio_data']
-            logger.info(f"Received audio data: {audio_file.name}, size: {audio_file.size} bytes, type: {audio_file.content_type}")
+            # logger.info(f"Received audio data: {audio_file.name}, size: {audio_file.size} bytes, type: {audio_file.content_type}")
             # Save the audio data to a file
             path = default_storage.save('myaudio.webm', audio_file)
             myfile_path = os.path.join(settings.MEDIA_ROOT, path)
@@ -156,7 +156,7 @@ def transcribe(request):
                     file=myfile,
                     response_format="text"
                 )
-                logger.info(f"Received transcript: {transcript}")
+                # logger.info(f"Received transcript: {transcript}")
             
             # Delete the saved audio file
             os.remove(myfile_path)
