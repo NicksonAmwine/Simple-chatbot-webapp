@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from openai import OpenAI
 from django.views import View
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .forms import RegisterForm, LoginForm
@@ -12,8 +12,20 @@ from django.contrib.auth.decorators import login_required
 from .forms import UpdateUserForm, UpdateProfileForm
 # import logging
 from django.core.files.storage import default_storage
-from django.core.files.base import ContentFile
 from django.conf import settings
+from django.utils.translation import gettext_lazy as _
+from django.views.decorators.csrf import csrf_protect
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import never_cache
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+
+
+
+
+
+
+import warnings
 import os
 
 
@@ -55,6 +67,8 @@ def chatbot(request):
 
 def home(request):
     return render(request, 'index.html')
+
+
 
 class RegisterView(View):
     form_class = RegisterForm
@@ -113,6 +127,25 @@ class CustomLoginView(LoginView):
                 return redirect('login') 
         return super(CustomLoginView, self).form_valid(form)
     
+LoginRequiredMixin
+class CustomLogoutView(LogoutView):
+    """
+    Custom logout view.
+    """
+
+    @method_decorator(never_cache)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+    def get_success_url(self):
+        # Specify the URL to redirect to after logout
+        return reverse_lazy('logout')  
+
+    @method_decorator(csrf_protect)
+    def post(self, request, *args, **kwargs):
+        messages.add_message(request, messages.SUCCESS, 'You have been logged out.')
+        return super().post(request, *args, **kwargs)
+
 @login_required
 def profile(request):
     if request.method == 'POST':

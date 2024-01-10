@@ -23,10 +23,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav w-100 d-flex justify-content-between">
-                  <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
-                    <a href="{% url 'home' %}" class="nav-link">Home</a>
-                  {% comment %} <a href="/" class="navbar-brand">Home</a> {% endcomment %}
-                  </li>
+    
                   {% if user.is_authenticated %}
                     <li class="nav-item {% if request.resolver_match.url_name == 'chatbot' %}active{% endif %}">
                       <a href="{% url 'chatbot' %}" class="nav-item nav-link">Chatbot</a>
@@ -35,6 +32,10 @@
                       <a href="{% url 'users-profile' %}" class="nav-item nav-link">Profile</a>
                     </li>
                   {% else %}
+                    <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                      <a href="{% url 'home' %}" class="nav-link">Home</a>
+                    {% comment %} <a href="/" class="navbar-brand">Home</a> {% endcomment %}
+                    </li>
                     <li class="nav-item {% if request.resolver_match.url_name == 'users-register' %}active{% endif %}">
                       <a href="{% url 'users-register' %}" class="nav-item nav-link">Register</a>
                     </li>
