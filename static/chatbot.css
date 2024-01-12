@@ -18,11 +18,10 @@
     color: #242323;
 }
 
-/* h1{
-    text-align: center;
-    font-size: 30px;
-    color: #242323;
-} */
+.custom-logout-button {
+    background-color: red !important;
+    color: white !important; /* Change the text color to white for better contrast */
+}
 
 body {
     background-color: rgb(210, 210, 209)

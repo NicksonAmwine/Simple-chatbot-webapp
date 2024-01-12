@@ -29,7 +29,7 @@ urlpatterns = [
     path('transcribe/', transcribe, name='transcribe'),
     path('', home, name='home'),
     path('register/', RegisterView.as_view(), name='users-register'),
-    path('profile/', profile, name='users-profile'),
+    path('profile/', profile, name='profile'),
     path('login/', CustomLoginView.as_view(redirect_authenticated_user=True, template_name='login.html',
                                            authentication_form=LoginForm), name='login'),
     path('logout/', CustomLogoutView.as_view(template_name='logout.html'), name='logout'),

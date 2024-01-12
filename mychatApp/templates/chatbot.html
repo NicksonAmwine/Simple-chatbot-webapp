@@ -11,7 +11,11 @@
 <body>
     <div class="jumbotron">
         <h1 class="display-4 text-center">Chat Buddy</h1>
-        <h3 class="display-5">Welcome, {{user.first_name.title|default:'Guest'}}</h3>
+        <div class="display-4.5">
+            Welcome, {{ user.first_name.title|default:'Guest' }}!
+            <img src="{{ user.profile.avatar.url }}" alt="{{ user.first_name.title|default:'Guest' }}'s profile image" class="rounded-circle" width="50" height="50">
+        </div>
+        {% comment %} <h3 class="display-5">Welcome, {{user.first_name.title|default:'Guest'}}</h3> {% endcomment %}
         <p class="lead">This is a simple chatbot that can help you with your queries.</p>
 
         <hr class="my-4">
@@ -30,9 +34,13 @@
                   </div>
             </form>
         </div>
+        <br>
         <p class="lead">
             {% if user.is_authenticated %}
-                <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button" >Logout</a>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-lg">Logout</button>
+                </form>
             {% else %}
                 <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Sign in</a>
             {% endif %}

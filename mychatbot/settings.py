@@ -57,10 +57,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-FILE_UPLOAD_HANDLERS = [
-    "django.core.files.uploadhandler.MemoryFileUploadHandler",
-    "django.core.files.uploadhandler.TemporaryFileUploadHandler",
-]
+# FILE_UPLOAD_HANDLERS = [
+#     "django.core.files.uploadhandler.MemoryFileUploadHandler",
+#     "django.core.files.uploadhandler.TemporaryFileUploadHandler",
+# ]
 
 ROOT_URLCONF = 'mychatbot.urls'
 
@@ -163,8 +163,9 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'login'
 
-LOGOUT_REDIRECT_URL = '/'
 LOGOUT_URL = 'logout'
+
+ROOT_URLCONF = 'mychatbot.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

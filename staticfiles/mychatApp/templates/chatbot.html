@@ -30,11 +30,12 @@
                   </div>
             </form>
         </div>
+        <br>
         <p class="lead">
             {% if user.is_authenticated %}
                 <form method="post" action="{% url 'logout' %}">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-primary btn-lg">Logout</button>
+                    <button type="submit" class="btn btn-danger btn-lg">Logout</button>
                 </form>
             {% else %}
                 <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Sign in</a>

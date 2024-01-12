@@ -137,11 +137,13 @@ class CustomLogoutView(LogoutView):
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
+    def get_next_page(self):
+        return reverse_lazy('home')
+
     def get_success_url(self):
         # Specify the URL to redirect to after logout
         return reverse_lazy('home')  
 
-    @method_decorator(csrf_protect)
     def post(self, request, *args, **kwargs):
         messages.add_message(request, messages.SUCCESS, 'You have been logged out.')
         return super().post(request, *args, **kwargs)
@@ -157,9 +159,11 @@ def profile(request):
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
-            profile_form.save()
+            profile = profile_form.save(commit=False)
+            profile.user = request.user
+            profile.save()
             messages.success(request, 'Your profile is updated successfully')
-            return redirect(to='users-profile')
+            return redirect(to='profile')
     else:
         user_form = UpdateUserForm(instance=request.user)
         if hasattr(request.user, 'profile'):
