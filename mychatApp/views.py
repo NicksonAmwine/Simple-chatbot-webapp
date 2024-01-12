@@ -14,20 +14,17 @@ from .forms import UpdateUserForm, UpdateProfileForm
 from django.core.files.storage import default_storage
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
-from django.views.decorators.csrf import csrf_protect
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-
-
-
-
-
-
-import warnings
+from .utils import generate_and_send_otp
+from django.core.exceptions import ObjectDoesNotExist
+from .models import OTP
+from django.contrib.auth import get_user_model
 import os
 
+NewUser = get_user_model()
 
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 if OPENAI_API_KEY is None:
@@ -51,7 +48,7 @@ def chatbot(request):
             model="gpt-3.5-turbo",
             messages= conversation,
             temperature=0.5,
-            max_tokens=80,
+            max_tokens=60,
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0
@@ -91,14 +88,15 @@ class RegisterView(View):
         form = self.form_class(request.POST)
 
         if form.is_valid():
-            form.save()
-
-            username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}')
-
-            return redirect(to='login')
-
-        return render(request, self.template_name, {'form': form})
+            request.session['register_form_data'] = form.cleaned_data
+            user = NewUser(username=form.cleaned_data.get('username'), email=form.cleaned_data.get('email'), first_name=form.cleaned_data.get('first_name'), last_name=form.cleaned_data.get('last_name'))
+            user.save()
+            generate_and_send_otp(user)
+            return redirect(to='otp-verification')
+        else:
+            print(form.errors)
+            return redirect(to='users-register')
+        
 
 
 class CustomLoginView(LoginView):
@@ -203,3 +201,35 @@ def transcribe(request):
             return JsonResponse({'error': 'No audio data found'})
     
     return "invalid request method"
+
+
+def otp_verification(request):
+    if request.method == 'POST':
+        entered_otp = request.POST.get('otp')
+        user = request.user
+
+        try:
+            
+            form_data = request.session.get('register_form_data')
+            user = NewUser.objects.get(username=form_data.get('username'), email=form_data.get('email'), first_name=form_data.get('first_name'), last_name=form_data.get('last_name'))
+            otp = OTP.objects.get(user=user)
+            print(f"Retrieved OTP: {otp.code}")
+            if otp.code == entered_otp:
+                user.is_active = True
+                user.set_password(form_data.get('password1'))
+                user.save()  # save user
+
+                otp.delete()
+                username = user.username
+                messages.success(request, f'Account created for {username}')
+                return redirect(to="login") # Redirect to the login page
+            else:
+                messages.error(request, 'Invalid OTP') 
+                print(f"User input OTP: {entered_otp}")  # Print the user input OTP
+                print("OTP comparison failed")
+                return render(request, 'otp_verification.html', {'error': 'Invalid OTP'})
+        except ObjectDoesNotExist:
+            messages.error(request, 'No OTP found for this user or user does not exist')
+            return render(request, 'otp_verification.html', {'error': 'No OTP found for this user'})
+    else:
+        return render(request, 'otp_verification.html')

@@ -22,10 +22,13 @@
             <div class="form-row">
                 <div class="col-md-5">
                     <div class="form-group">
+                        <label class="small mb-1">Full Names:</label>
+                        {{ user.first_name}} {{ user.last_name }}
+                        <br><br>
                         <label class="small mb-1">Username:</label>
-                            {{ user_form.username }}
+                        {{ user_form.username }}
                         <label class="small mb-1">Email:</label>
-                            {{ user_form.email }}
+                        {{ user_form.email }}
                     </div>
                     <div class="form-group">
                         <hr>

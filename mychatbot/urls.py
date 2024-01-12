@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from mychatApp.views import chatbot, transcribe
+from mychatApp.views import chatbot, transcribe, otp_verification as otp
 from mychatApp.views import home, RegisterView, profile, CustomLoginView, LoginForm, CustomLogoutView
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
@@ -29,6 +28,7 @@ urlpatterns = [
     path('transcribe/', transcribe, name='transcribe'),
     path('', home, name='home'),
     path('register/', RegisterView.as_view(), name='users-register'),
+    path('otp-verification/', otp, name='otp-verification'),
     path('profile/', profile, name='profile'),
     path('login/', CustomLoginView.as_view(redirect_authenticated_user=True, template_name='login.html',
                                            authentication_form=LoginForm), name='login'),

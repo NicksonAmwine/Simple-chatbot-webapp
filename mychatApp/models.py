@@ -31,6 +31,9 @@ class Profile(models.Model):
             img.thumbnail(new_img)
             img.save(self.avatar.path)
 
-    
+class OTP(models.Model):
+    user = models.OneToOneField(NewUser, on_delete=models.CASCADE)
+    code = models.CharField(max_length=6)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 # Create your models here.

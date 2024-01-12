@@ -13,7 +13,7 @@
         <h1 class="display-4 text-center">Chat Buddy</h1>
         <div class="display-4.5">
             Welcome, {{ user.first_name.title|default:'Guest' }}!
-            <img src="{{ user.profile.avatar.url }}" alt="{{ user.first_name.title|default:'Guest' }}'s profile image" class="rounded-circle" width="50" height="50">
+            <img src="{{ user.profile.avatar.url }}" alt="{{ user.first_name.title }}'s profile image" class="rounded-circle" width="50" height="50">
         </div>
         {% comment %} <h3 class="display-5">Welcome, {{user.first_name.title|default:'Guest'}}</h3> {% endcomment %}
         <p class="lead">This is a simple chatbot that can help you with your queries.</p>
