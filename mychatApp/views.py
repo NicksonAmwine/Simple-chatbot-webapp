@@ -139,7 +139,7 @@ class CustomLogoutView(LogoutView):
 
     def get_success_url(self):
         # Specify the URL to redirect to after logout
-        return reverse_lazy('login')  
+        return reverse_lazy('home')  
 
     @method_decorator(csrf_protect)
     def post(self, request, *args, **kwargs):
