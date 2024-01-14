@@ -22,8 +22,9 @@
             <div class="form-row">
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="small mb-1">Full Names:</label>
-                        {{ user.first_name}} {{ user.last_name }}
+                        <div class="profile-info">
+                            <h2>Full Names: {{ user.first_name}} {{ user.last_name }}</h2>
+                        </div>
                         <br><br>
                         <label class="small mb-1">Username:</label>
                         {{ user_form.username }}

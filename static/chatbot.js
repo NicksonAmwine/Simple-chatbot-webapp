@@ -4,7 +4,6 @@ function getCookie(name) {
         let cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
             let cookie = cookies[i].trim();
-            // Does this cookie string begin with the name we want?
             if (cookie.substring(0, name.length + 1) === (name + '=')) {
                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                 break;
@@ -13,10 +12,6 @@ function getCookie(name) {
     }
     return cookieValue;
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Your existing code goes here...
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     const chatlog = document.getElementById('chatlog');
@@ -86,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         method: 'POST',
                         body: formData,
                         headers: {
-                            'X-CSRFToken': getCookie('csrftoken')  // Assuming you have a function to get the CSRF token
+                            'X-CSRFToken': getCookie('csrftoken') 
                         }
                     })
                     .then(response => {
