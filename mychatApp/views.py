@@ -95,7 +95,7 @@ class RegisterView(View):
             return redirect(to='otp-verification')
         else:
             print(form.errors)
-            return redirect(to='users-register')
+            return render(request, 'register.html', {'form': form})
         
 
 

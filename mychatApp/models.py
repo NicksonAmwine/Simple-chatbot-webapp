@@ -22,7 +22,7 @@ class Profile(models.Model):
     def save(self, *args, **kwargs):
         if self.pk:  # if the instance already exists in the database
             old_image = Profile.objects.get(pk=self.pk).avatar
-            if old_image != self.avatar:  # if the image has changed
+            if old_image != self.avatar and old_image.name != 'default.jpg':  # if the image has changed
                 old_image.delete(save=False)  # delete the old image file
         super().save()
 
