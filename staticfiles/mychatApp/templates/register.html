@@ -57,7 +57,11 @@
                                         <div class="form-group">
                                             <label class="small mb-1">Password</label>
                                             {{ form.password1 }}
-                                            {{ form.errors.password }}
+                                            {% if form.password1.errors %}
+                                                <div class="alert alert-danger">
+                                                    {{ form.password1.errors }}
+                                                </div>
+                                            {% endif %}
                                         </div>
                                     </div>
                                     <div class="col-md-6">

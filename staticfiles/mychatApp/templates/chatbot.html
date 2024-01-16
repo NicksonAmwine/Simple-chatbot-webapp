@@ -10,8 +10,11 @@
 </head>
 <body>
     <div class="jumbotron">
-        <h1 class="display-4 text-center">Chat Buddy</h1>
-        <h3 class="display-5">Welcome, {{user.first_name.title|default:'Guest'}}</h3>
+        <h1 class="display-3 text-center">Chat Buddy</h1>
+        <div class="display-4.5">
+            <h3>Welcome, {{ user.first_name.title|default:'Guest' }}!
+            <img src="{{ user.profile.avatar.url }}" alt="{{ user.first_name.title }}'s profile image" class="rounded-circle" width="50" height="50"></h3>
+        </div>
         <p class="lead">This is a simple chatbot that can help you with your queries.</p>
 
         <hr class="my-4">
@@ -42,7 +45,7 @@
             {% endif %}
         </p>
     </div>
-    <script type="text/js" src="{% static 'chatbot.js' %}"></script>
+    <script src="{% static 'chatbot.js' %}"></script>
     <script src="https://cdn.WebRTC-Experiment.com/RecordRTC.js"></script>
 </body>
 </html>

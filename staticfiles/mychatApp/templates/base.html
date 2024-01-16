@@ -11,6 +11,12 @@
     <!--Font awesome icons -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
+  <!-- Custom CSS -->
+  <style>
+    .active {
+      border-bottom: 2px solid blue;  
+    }
+  </style>
     <title>{% block title %} {% endblock %} </title>
 </head>
 <body>
@@ -23,18 +29,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav w-100 d-flex justify-content-between">
-                  <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
-                    <a href="{% url 'home' %}" class="nav-link">Home</a>
-                  {% comment %} <a href="/" class="navbar-brand">Home</a> {% endcomment %}
-                  </li>
+    
                   {% if user.is_authenticated %}
                     <li class="nav-item {% if request.resolver_match.url_name == 'chatbot' %}active{% endif %}">
                       <a href="{% url 'chatbot' %}" class="nav-item nav-link">Chatbot</a>
                     </li>
-                    <li class="nav-item {% if request.resolver_match.url_name == 'users-profile' %}active{% endif %}">
-                      <a href="{% url 'users-profile' %}" class="nav-item nav-link">Profile</a>
+                    <li class="nav-item {% if request.resolver_match.url_name == 'profile' %}active{% endif %}">
+                      <a href="{% url 'profile' %}" class="nav-item nav-link">Profile</a>
                     </li>
                   {% else %}
+                    <li class="nav-item {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                      <a href="{% url 'home' %}" class="nav-link">Home</a>
+                    {% comment %} <a href="/" class="navbar-brand">Home</a> {% endcomment %}
+                    </li>
                     <li class="nav-item {% if request.resolver_match.url_name == 'users-register' %}active{% endif %}">
                       <a href="{% url 'users-register' %}" class="nav-item nav-link">Register</a>
                     </li>
