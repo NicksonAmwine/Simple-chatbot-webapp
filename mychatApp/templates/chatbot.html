@@ -19,7 +19,16 @@
 
         <hr class="my-4">
         <div id="chatbot-container">
-            <div id="chatlog"></div>
+            <div id="chatlog">
+                {% for message in past_messages %}
+                    <div class="user-message">
+                        <div>{{ message.message }}</div>
+                    </div>
+                    <div class="bot-message">
+                        <div>{{ message.response }}</div>
+                    </div>
+                {% endfor %}
+            </div>
             <form id="chat-form">
                 <div class="input-group">
                     <div class="input-group-prepend">

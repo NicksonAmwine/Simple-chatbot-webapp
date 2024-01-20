@@ -45,14 +45,32 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             body: 'user_input=' + encodeURIComponent(userMessage)
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw response;
+            }
+            return response.json();
+        })
         .then(data => {
             // Add the bot response to the chat log
             chatlog.innerHTML += '<div class="bot-message">' + data.bot_response + '</div>'
             // Scroll to the bottom of the chat log
             chatlog.scrollTop = chatlog.scrollHeight;
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            // If the server responded with an error status, parse the response
+            if (error.json) {
+                error.json().then(data => {
+                    console.error('Error:', data.error);
+                    // Display the error message to the user
+                    chatlog.innerHTML += '<div class="error-message">' + data.error + '</div>'
+                    // Scroll to the bottom of the chat log
+                    chatlog.scrollTop = chatlog.scrollHeight;
+                });
+            } else {
+                console.error('Error:', error);
+            }
+        });
     });
 
     

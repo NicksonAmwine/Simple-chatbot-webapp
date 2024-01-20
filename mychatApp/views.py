@@ -1,14 +1,13 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from openai import OpenAI
+from openai import OpenAI, OpenAIError
 from django.views import View
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .forms import RegisterForm, LoginForm
 from django.contrib.auth.decorators import login_required
-# from .models import Profile
 from .forms import UpdateUserForm, UpdateProfileForm
 # import logging
 from django.core.files.storage import default_storage
@@ -20,13 +19,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .utils import generate_and_send_otp
 from django.core.exceptions import ObjectDoesNotExist
-from .models import OTP
+from .models import OTP, ChatMessage
 from django.contrib.auth import get_user_model
 import os
 
 NewUser = get_user_model()
 
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if OPENAI_API_KEY is None:
     raise Exception("Please set the OPENAI_API_KEY environment variable")
 client = OpenAI(api_key=OPENAI_API_KEY)
@@ -42,25 +41,36 @@ def chatbot(request):
             user_input = request.POST['user_input']
             conversation.append({"role": "user", "content": user_input})
 
-
-            # Call the ChatGPT API to get a response
-            completion = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages= conversation,
-            temperature=0.5,
-            max_tokens=60,
-            top_p=1,
-            frequency_penalty=0,
-            presence_penalty=0
-            )
-
+            try:
+                # Call the ChatGPT API to get a response
+                completion = client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages= conversation,
+                temperature=0.5,
+                max_tokens=60,
+                top_p=1,
+                frequency_penalty=0,
+                presence_penalty=0
+                )
+            except OpenAIError as error:
+                print(f"An error occurred: {error}")
+                return JsonResponse({'error': error})
+            
             # Extract the response text from the API result
             bot_response = completion.choices[0].message.content
             conversation.append({"role": "system", "content": bot_response})
+
+            # Save the message and response
+            ChatMessage.objects.create(user=request.user, message=user_input, response=bot_response)
             # Return the response as JSON
             return JsonResponse({'bot_response': bot_response})
     # If the request is not a POST, render the chatbot template
-    return render(request, 'chatbot.html')
+    else:
+        # Get the user's past messages
+        past_messages = ChatMessage.objects.filter(user=request.user).order_by('timestamp')
+
+        # Pass the messages to the template
+        return render(request, 'chatbot.html', {'past_messages': past_messages})
 
 def home(request):
     return render(request, 'index.html')
