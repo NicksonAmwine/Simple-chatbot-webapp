@@ -101,10 +101,16 @@ class RegisterView(View):
         form = self.form_class(request.POST)
 
         if form.is_valid():
+            email = form.cleaned_data.get('email')
+            
+            # Check if the email already exists in the database
+            if NewUser.objects.filter(email=email).exists():
+                form.add_error('email', 'Email already exists')
+                return render(request, 'register.html', {'form': form})
+            
             request.session['register_form_data'] = form.cleaned_data
-            user = NewUser(username=form.cleaned_data.get('username'), email=form.cleaned_data.get('email'), first_name=form.cleaned_data.get('first_name'), last_name=form.cleaned_data.get('last_name'))
-            user.save()
-            generate_and_send_otp(user)
+    
+            generate_and_send_otp(request, form.cleaned_data)
             return redirect(to='otp-verification')
         else:
             print(form.errors)
@@ -219,22 +225,28 @@ def transcribe(request):
 def otp_verification(request):
     if request.method == 'POST':
         entered_otp = request.POST.get('otp')
-        user = request.user
 
         try:
             
             form_data = request.session.get('register_form_data')
-            user = NewUser.objects.get(username=form_data.get('username'), email=form_data.get('email'), first_name=form_data.get('first_name'), last_name=form_data.get('last_name'))
-            otp = OTP.objects.get(user=user)
-            print(f"Retrieved OTP: {otp.code}")
-            if otp.code == entered_otp:
+            username = form_data.get('username')
+
+            # Check if a user with the given username already exists
+            if NewUser.objects.filter(username=username).exists():
+                messages.error(request, 'A user with this username already exists.')
+                return redirect(to="users-register")  # Redirect to the registration page
+            
+            user = NewUser(username=form_data.get('username'), email=form_data.get('email'), first_name=form_data.get('first_name'), last_name=form_data.get('last_name'))
+            otp = request.session.get('otp')
+            if otp == entered_otp:
                 user.is_active = True
                 user.set_password(form_data.get('password1'))
                 user.save()  # save user
 
-                otp.delete()
-                username = user.username
-                messages.success(request, f'Account created for {username}')
+                del request.session['register_form_data']  # Delete the form data from the session
+                del request.session['otp']  # Delete the OTP from the session
+
+                messages.success(request, f'Account created for {user.username}')
                 return redirect(to="login") # Redirect to the login page
             else:
                 messages.error(request, 'Invalid OTP') 
