@@ -25,7 +25,7 @@ import os
 
 NewUser = get_user_model()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = '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'
 if OPENAI_API_KEY is None:
     raise Exception("Please set the OPENAI_API_KEY environment variable")
 client = OpenAI(api_key=OPENAI_API_KEY)
@@ -54,7 +54,7 @@ def chatbot(request):
                 )
             except OpenAIError as error:
                 print(f"An error occurred: {error}")
-                return JsonResponse({'error': error})
+                return JsonResponse({'error': str(error)})
             
             # Extract the response text from the API result
             bot_response = completion.choices[0].message.content
@@ -73,6 +73,9 @@ def chatbot(request):
         return render(request, 'chatbot.html', {'past_messages': past_messages})
 
 def home(request):
+    if request.user.is_authenticated:
+        return redirect(to='chatbot')
+    
     return render(request, 'index.html')
 
 
