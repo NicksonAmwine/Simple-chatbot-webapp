@@ -3,13 +3,13 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from openai import OpenAI, OpenAIError
 from django.views import View
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetView
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from .forms import RegisterForm, LoginForm
 from django.contrib.auth.decorators import login_required
 from .forms import UpdateUserForm, UpdateProfileForm
-# import logging
+from django.contrib.messages.views import SuccessMessageMixin
 from django.core.files.storage import default_storage
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
@@ -19,7 +19,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .utils import generate_and_send_otp
 from django.core.exceptions import ObjectDoesNotExist
-from .models import OTP, ChatMessage
+from .models import ChatMessage
 from django.contrib.auth import get_user_model
 import os
 
@@ -78,7 +78,19 @@ def home(request):
     
     return render(request, 'index.html')
 
+class ResetPasswordView(PasswordResetView):
+    template_name = 'password_reset.html'
+    success_url = reverse_lazy('chatbot')
+    email_template_name = 'password_reset_email.html'
+    subject_template_name = 'password_reset_subject'
 
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+        messages.success(request, "We've emailed you instructions for setting your password, "
+                                  "if an account exists with the email you entered. You should receive them shortly."
+                                  " If you don't receive an email, "
+                                  "please make sure you've entered the address you registered with, and check your spam folder.")
+        return response
 
 class RegisterView(View):
     form_class = RegisterForm
@@ -208,6 +220,7 @@ def transcribe(request):
                 transcript = client.audio.transcriptions.create(
                     model="whisper-1", 
                     file=myfile,
+                    language="en-US",
                     response_format="text"
                 )
                 # logger.info(f"Received transcript: {transcript}")
