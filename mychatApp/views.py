@@ -220,7 +220,7 @@ def transcribe(request):
                 transcript = client.audio.transcriptions.create(
                     model="whisper-1", 
                     file=myfile,
-                    language="en-US",
+                    language="en",
                     response_format="text"
                 )
                 # logger.info(f"Received transcript: {transcript}")
