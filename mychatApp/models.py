@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User, AbstractUser
 from PIL import Image
+import os
+from django.core.files import File
+from django.core.files.storage import default_storage
 from django.db.models.signals import post_save
 from django.dispatch import receiver
  
@@ -20,18 +23,26 @@ class Profile(models.Model):
     
     # resizing images
     def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        # Check if the new image file exists
+        if default_storage.exists(self.avatar.path):
+            img = Image.open(self.avatar.path)
+            if img.height > 100 or img.width > 100:
+                output_size = (100, 100)
+                img.thumbnail(output_size)
+                img.save(self.avatar.path)
+        else:
+            default_image_path = os.path.join(default_storage.location, 'profile_images', 'default.jpg')
+            if default_storage.exists(default_image_path):
+                self.avatar.save('default.jpg', File(open(default_image_path, 'rb')))
+            else:
+                print("Default image not found. Please make sure 'default.jpg' exists in the 'profile_images' directory.")
+
         if self.pk:  # if the instance already exists in the database
             old_image = Profile.objects.get(pk=self.pk).avatar
             if old_image != self.avatar and old_image.name != 'default.jpg':  # if the image has changed
                 old_image.delete(save=False)  # delete the old image file
-        super().save()
-
-        img = Image.open(self.avatar.path)
-
-        if img.height > 100 or img.width > 100:
-            new_img = (100, 100)
-            img.thumbnail(new_img)
-            img.save(self.avatar.path)
 
 class OTP(models.Model):
     user = models.OneToOneField(NewUser, on_delete=models.CASCADE)

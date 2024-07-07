@@ -1,4 +1,6 @@
 *.env
-__pycache__ 
+mychatApp\__pycache__ 
+mychatApp\migrations
+mychatbot\__pycache__
 db.sqlite3
 *.log
