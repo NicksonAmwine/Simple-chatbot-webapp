@@ -25,7 +25,7 @@ import os
 
 NewUser = get_user_model()
 
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = 'sk-proj-tjpZBjwMkE7go6PcLI6qT3BlbkFJv6VnI9OrVfPvkNcZz4NW'
 if OPENAI_API_KEY is None:
     raise Exception("Please set the OPENAI_API_KEY environment variable")
 client = OpenAI(api_key=OPENAI_API_KEY)
